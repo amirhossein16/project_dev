@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(AdminSeeder::class);
+        \App\Models\FishingTable::factory(50)->create();
 
 //        \App\Models\User::factory()(User::class, 50)->create()->each(function($u) {
 //            DB::table('users')->insert([
@@ -24,8 +23,6 @@ class DatabaseSeeder extends Seeder
 //            ]);
 //        });
 
-        User::factory()
-            ->count(1000)
-            ->create();
+
     }
 }

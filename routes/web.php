@@ -26,4 +26,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('FishingPanel', \App\Http\Controllers\DashboardController::class);
 });
