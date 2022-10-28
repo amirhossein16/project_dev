@@ -4,6 +4,7 @@
 namespace App\Repositories;
 
 
+use App\Models\FishingTable;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -36,7 +37,16 @@ abstract class Repository
 
     public static function where($value, $column = "id", $operator = '=')
     {
-        return self::$model->where($value, $operator, $column)->get();
+        return self::$model->where($column, $operator, $value);
     }
 
+    public static function create($data)
+    {
+        return self::$model->firstOrCreate($data);
+    }
+
+    public static function update($id, $data)
+    {
+        return self::$model::findOrFail($id)->update($data);
+    }
 }

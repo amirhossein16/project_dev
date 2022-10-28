@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FishingTable extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['UrlPath','id'];
 }

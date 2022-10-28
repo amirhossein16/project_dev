@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[\App\Http\Controllers\TestFishing::class,'welcome'])->name('first');
 
-
+Route::post('/FishingTest',[\App\Http\Controllers\TestFishing::class,'FishingTestMethod'])->name('fishing-test');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
