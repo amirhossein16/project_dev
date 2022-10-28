@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\UrlRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FishingFieldTestRequest extends FormRequest
@@ -24,7 +25,7 @@ class FishingFieldTestRequest extends FormRequest
     public function rules()
     {
         return [
-            'FishingTest'=>'required|url'
+            'FishingTest' => ['bail','required', new UrlRule()]
         ];
     }
 }

@@ -509,7 +509,7 @@
     class="relative flex flex-col items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
     @if ($errors->any())
         <div
-            class="bg-red-100 border rounded-full border-red-400 text-red-700 px-4 py-3 relative m-2"
+            class="bg-red-100 border rounded-lg border-red-400 text-red-700 px-4 py-3 relative m-2"
             role="alert">
             <strong class="font-bold">Input Error ! => </strong>
             @foreach ($errors->all() as $error)
@@ -519,7 +519,7 @@
     @endif
     @if(session('success') || session('edited') || session('Deleted') || session('warning'))
         <div
-            class="m-10 bg-teal-100 border-t-4 border-teal-500 text-teal-900 px-4 py-3 shadow-md rounded-full"
+            class="m-10 bg-teal-100 border-t-4 border-teal-500 text-teal-900 px-4 py-3 shadow-md rounded-lg"
             role="alert">
             <div class="flex">
                 <div class="py-1">

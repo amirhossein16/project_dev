@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Models\FishingTable;
+use App\Rules\EditUrlRule;
+use App\Rules\UrlRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Routing\Route;
 
@@ -25,12 +27,12 @@ class FishingRequest extends FormRequest
      */
     public function rules()
     {
-        if (request()->method === 'PUT' && !FishingTable::where('UrlPath', request()->UrlPath)->count())
+        if (request()->method === 'PUT')
             return [
-                'UrlPath' => 'bail|required|url'
+                'UrlPath' => ["bail", "required", new EditUrlRule()]
             ];
         return [
-            'UrlPath' => 'bail|required|url|unique:fishing_tables'
+            'UrlPath' => ["bail", "required", "unique:fishing_tables", new UrlRule()]
         ];
     }
 }

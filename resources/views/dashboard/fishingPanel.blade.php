@@ -19,7 +19,7 @@
                 <div class="overflow-x-auto">
                     <div
                         class="min-w-screen bg-gray-100 flex items-center sm:rounded-2xl rounded-lg justify-center bg-gray-100 font-sans overflow-hidden">
-                        <div class="w-full lg:w-5/6">
+                        <div class="w-full lg:w-5/6 sm:w-full">
                             @if ($errors->any())
                                 <div
                                     class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative m-2"
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                 @endif
-                            <div class="bg-white shadow-md my-6 sm:rounded-2xl rounded-lg">
+                            <div class="bg-white w-full shadow-md my-6 sm:rounded-2xl rounded-lg">
                                 <table class="min-w-max w-full table-auto">
                                     <thead>
                                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -68,7 +68,7 @@
                                     </thead>
                                     <tbody class="text-gray-600 text-sm font-light">
                                     @foreach($urls as $url)
-                                        <tr class="border-b border-gray-200 hover:bg-gray-100 even:bg-teal-200">
+                                        <tr class="border-b border-gray-200 bg-white hover:bg-gray-100 even:bg-teal-200">
                                             <td class="py-3 px-6 whitespace-nowrap">
                                                 <div class="flex justify-center items-center">
                                                     <span class="font-medium">{{$url['id']}}</span>

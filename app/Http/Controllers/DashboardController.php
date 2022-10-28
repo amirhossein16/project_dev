@@ -9,8 +9,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class DashboardController extends Controller
 {
@@ -62,7 +60,7 @@ class DashboardController extends Controller
      * @param int $id
      * @return void
      */
-    public function show($id)
+    public function show(int $id)
     {
         //
     }
@@ -71,9 +69,9 @@ class DashboardController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return Application|Factory|View|void
+     * @return Application|Factory|RedirectResponse|View
      */
-    public function edit($id)
+    public function edit(int $id)
     {
         $query = $this->urls::where($id)->first();
         $query !== null ?
@@ -92,11 +90,11 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param FishingRequest $request
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(FishingRequest $request, $id)
+    public function update(FishingRequest $request, int $id)
     {
         $validated = $request->validated();
         $this->urls::update($id, $validated);

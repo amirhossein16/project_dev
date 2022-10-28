@@ -18,10 +18,13 @@ class TestFishing extends Controller
     public function FishingTestMethod(FishingFieldTestRequest $field)
     {
         $validated = $field->validated();
-        $a = $this->fieldTest::where($validated['FishingTest'], 'UrlPath')->select(['id', 'UrlPath'])->first();
-        if ($a !== null)
+
+        $url = $this->fieldTest::where($validated['FishingTest'], 'UrlPath')->select(['id', 'UrlPath'])->first();
+
+        if ($url !== null)
             return redirect()->action('App\Http\Controllers\TestFishing@welcome')
                 ->with('success', 'Fishing Url Exist :)');
+
         return redirect()->action('App\Http\Controllers\TestFishing@welcome')
             ->with('warning', 'Fishing Url Not Exist :((');
     }
