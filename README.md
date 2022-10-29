@@ -6,7 +6,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="[https://github.com/amirhossein16/snappfood/blob/741449ebfa51e5cf5c87aa9921b792cf925c02af/screencapture-127-0-0-1-8000-FoodPanel-2022-07-28-15_56_34.png](https://github.com/amirhossein16/project_dev/blob/61c6d2646f9835982b57a6caaa8026d59dbf202f/Rec%200163.gif)" alt="project-screenshot" width="100%" height="100%/">
+<img src="[Rec 0163.gif](https://github.com/amirhossein16/project_dev/blob/master/Rec%200163.gif)" alt="project-screenshot" width="100%" height="100%/">
   
   
 <h2>🧐 Features</h2>
